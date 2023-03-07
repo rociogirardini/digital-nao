@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Reto 1</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <span class="brand"> Caroline Sada</span>
+          <ul>
+            <li>
+              <a href="#" class="active">Inicio</a>
+            </li>
+            <li>
+              <a href="#benefits">Beneficios</a>
+            </li>
+            <li>
+              <a href="#price">Inversión</a>
+            </li>
+            <li>
+              <a href="#">Testimonios</a>
+            </li>
+            <li>
+              <a href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="title">
+        <h1>¡Emprender nunca había sido tan fácil!</h1>
+        <h3>Toma el control de tus finanzas y haz crecer tu negocio</h3>
+        <div style="display: flex">
+          <button type="button" class="regular">Comprar ahora</button>
+          <button type="button" class="outline">Ver más información</button>
+        </div>
+      </section>
+      <section class="card">
+        <div>
+          <h2>Desbloquea tu potencial financiero</h2>
+          <p>
+            Compra el curso ahora y recibe una checklist de todo lo que
+            necesitas para avanzar en tu emprendimiento
+          </p>
+          <button class="regular green">Lo quiero</button>
+        </div>
+        <div>
+          <img src="./images/bussiness.svg" alt="bussiness" />
+        </div>
+      </section>
+      <div id="benefits">
+        <section class="benefit">
+          <div>
+            <img src="./images/smart-choises.svg" alt="graphic-choises">
+          </div>
+          <div class="information">
+            <p class="muted">Gastos inteligentes</p>
+            <h3>Toma decisiones acertadas</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+              ipsam nostrum eaque enim laboriosam consectetur. Sapiente asperiores
+              aspernatur praesentium quo, neque repudiandae earum dolores,
+              dignissimos et quia magnam! Cum et quae eligendi maxime. Delectus
+              quod magni blanditiis exercitationem, eos doloremque, unde magnam
+              deleniti expedita debitis fugiat porro in fuga autem?
+            </p>
+          </div>
+        </section>
+        <section class="benefit">
+          <div class="information">
+            <p class="muted">Toma el control</p>
+            <h3>Gestiónalo tú mismo</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+              ipsam nostrum eaque enim laboriosam consectetur. Sapiente asperiores
+              aspernatur praesentium quo, neque repudiandae earum dolores,
+              dignissimos et quia magnam! Cum et quae eligendi maxime. Delectus
+              quod magni blanditiis exercitationem, eos doloremque, unde magnam
+              deleniti expedita debitis fugiat porro in fuga autem?
+            </p>
+          </div>
+          <div>
+            <img src="./images/diy.svg" alt="graphic-choises">
+          </div>
+        </section>
+      </div>
+      <div id="price">
+        <div style="display: flex; align-items: center; flex-direction: column; margin-bottom: 5rem;">
+          <h2>Inversión</h2>
+          <p style="font-weight: 400;">La satisfacción y los resultados están garantizados</p>
+        </div>
+        <section class="price">
+          <div>
+            <h3>Tener el control de tu emprendimiento no tiene precio</h3>
+            <p style="font-weight: 400; font-size: 1.3rem; width: 75%;">El costo de una mala gestión puede ser mucho más grande</p>
+          </div>
+          <div class="card-price">
+            <p class="muted">Curso completo</p>
+            <p style="font-size: 5rem;">$199</p>
+            <p style="font-size: 1.5rem; font-weight: 400; width: 20rem;">Pensado especialmente para emprendedores.</p>
+            <button class="regular green">Lo quiero</button>
+          </div>
+          <div class="card-price" style="font-size: 1.5rem;">
+            <p style="color:#026764">Obtendrás</p>
+            <ul>
+              <li>Acceso por tiempo ilimitado</li>
+              <li>Recursos descargables</li>
+              <li>¡Garantía de satisfacción!</li>
+            </ul>
+            <button class="outline outline-green">Necesito más información</button>
+          </div>
+        </section>
+      </div>
+      <div id="contact" style="margin-top: 5rem">
+        <section class="card" style="height: 35rem;">
+          <div>
+            <h2 style="font-size: 5rem;">Comienza a potenciar tus finanzas</h2>
+            <p>
+              El cambio está en ti y puedes iniciarlo hoy mismo
+            </p>
+          </div>
+          <div>
+            <form>
+                <label>Nombre *</label>
+                <input type="text" placeholder="Caroline" required/>
+                <label>Apellido *</label>
+                <input type="text" placeholder="Sada" required/>
+                <label>Email *</label>
+                <input type="email" placeholder="caroline@sada.com" required/>
+                <label>Mensaje</label>
+                <textarea cols="40" rows="5" placeholder="Hablemos..."></textarea>
+                <button type="submit" class="regular green" style="align-self: center;">¡Comencemos!</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div>
+        <p style="font-size: 2rem; width: min-content;">Caroline Sada</p>
+        <p>2023 © Sada </p>
+        <p>All rights reserved</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#benefits">Beneficios</a>
+          </li>
+          <li>
+            <a href="#price">Inversión</a>
+          </li>
+          <li>
+            <a href="#">Testimonios</a>
+          </li>
+          <li>
+            <a href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#">Tik Tok</a>
+          </li>
+          <li>
+            <a href="#">Instagram</a>
+          </li>
+          <li>
+            <a href="#">Twitter</a>
+          </li>
+          <li>
+            <a href="#">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="#">Políticas de Privacidad</a>
+          </li>
+          <li>
+            <a href="#">Términos y Condiciones</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

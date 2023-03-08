@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+    background-color: #212529;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+}
+
+main {
+  background-color: #212529;
+  color: white;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+td:hover{
+    cursor: pointer;
+}
+
+td a{
+    color: white;
+    text-decoration: none;
+}

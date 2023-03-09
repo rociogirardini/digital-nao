@@ -16,7 +16,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>
       Reto 1 - Creatividad y confianza: los mejores aliados de una influencer
     </title>
@@ -155,14 +155,14 @@
             La satisfacción y los resultados están garantizados
           </p>
         </div>
-        <div class="row justify-content-around mt-3 p-3">
-          <div class="col-md-5">
-            <h4 style="overflow-wrap: break-word">Tener el control de tu emprendimiento no tiene precio</h4>
+        <div class="row justify-content-around align-items-center mt-3 p-3">
+          <div class="col-lg-5">
+            <h4>Tener el control de tu emprendimiento no tiene precio</h4>
             <p>
               El costo de una mala gestión puede ser mucho más grande
             </p>
           </div>
-          <div class="card card-price justify-content-around align-items-center col-md-3 mb-3 text-black">
+          <div class="card card-price justify-content-around align-items-center col-lg-3 col-md-7 mb-3 text-black">
             <div class="row">
               <div class="col">
                 <p class="text-muted text-uppercase">Curso completo</p>
@@ -184,7 +184,7 @@
               </div>
             </div>
           </div>
-          <div class="card card-price justify-content-around align-items-center col-md-3 mb-3 text-black">
+          <div class="card card-price justify-content-around align-items-center col-lg-3 col-md-7 mb-3 text-black">
             <div class="row">
               <div class="col text-uppercase">
                 <p style="color: #026764; font-weight: 600;">Obtendrás</p>
@@ -207,39 +207,100 @@
           </div>
         </div>
       </div>
-      <div id="contact" style="margin-top: 5rem">
-        <section class="card" style="height: 35rem">
-          <div style="width: 40%">
-            <h2 style="font-size: 3rem; width: 90%">
-              Comienza a potenciar tus finanzas
-            </h2>
-            <p style="width: 90%">
-              El cambio está en ti y puedes iniciarlo hoy mismo
-            </p>
+      <div id="contact" class="container my-5">
+        <div class="card text-dark p-3">
+          <div class="row g-0 justify-content-around align-items-center">
+            <div class="col-md-5">
+              <div class="card-body">
+                <h3>Comienza a potenciar tus finanzas</h3>
+                <p class="card-text">El cambio está en ti y puedes iniciarlo hoy mismo</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <form class="row g-3 was-validated">
+                <div class="col-md-6">
+                  <label class="form-label">Nombre *</label>
+                  <input type="text" class="form-control" placeholder="Caroline" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Apellido *</label>
+                  <input type="text" class="form-control" placeholder="Sada" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Email *</label>
+                  <input type="email" class="form-control" placeholder="caroline@sada.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Mensaje</label>
+                  <textarea class="form-control" placeholder="Hablemos..."></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-success">¡Comencemos!</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div>
-            <form>
-              <label>Nombre *</label>
-              <input type="text" placeholder="Caroline" required />
-              <label>Apellido *</label>
-              <input type="text" placeholder="Sada" required />
-              <label>Email *</label>
-              <input type="email" placeholder="caroline@sada.com" required />
-              <label>Mensaje</label>
-              <textarea cols="40" rows="5" placeholder="Hablemos..."></textarea>
-              <button
-                type="submit"
-                class="regular green"
-                style="align-self: center"
-              >
-                ¡Comencemos!
-              </button>
-            </form>
-          </div>
-        </section>
+        </div>
       </div>
     </main>
-    <footer>
+    <footer class="py-3 mx-5">
+      <div class="row justify-content-center">
+        <div class="col-md-2">
+          <p class="footer-brand">Caroline Sada</p>
+          <p>2023 © Sada</p>
+          <p style="font-size: 0.8rem">All rights reserved</p>
+        </div>
+        <div class="col-md-2">
+          <ul>
+            <li>Menú</li>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#benefits">Beneficios</a>
+            </li>
+            <li>
+              <a href="#price">Inversión</a>
+            </li>
+            <li>
+              <a href="#">Testimonios</a>
+            </li>
+            <li>
+              <a href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <ul>
+            <li>Redes Sociales</li>
+            <li>
+              <a href="#">Tik Tok</a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+            <li>
+              <a href="#">Twitter</a>
+            </li>
+            <li>
+              <a href="#">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul>
+            <li>Legales</li>
+            <li>
+              <a href="#">Políticas de Privacidad</a>
+            </li>
+            <li>
+              <a href="#">Términos y Condiciones</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- <footer>
       <div>
         <p style="font-size: 2rem; width: min-content">Caroline Sada</p>
         <p>2023 © Sada</p>
@@ -290,11 +351,13 @@
           </li>
         </ul>
       </div>
-    </footer>
+    </footer> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
   </body>
 </html>

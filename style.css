@@ -19,11 +19,19 @@ h1 {
   font-weight: 700;
 }
 
-td:hover{
-    cursor: pointer;
+.view-demo:hover{
+    text-decoration: underline;
 }
 
 td a{
     color: white;
     text-decoration: none;
+}
+
+.btn-green{
+  background-color: #0fa08a;
+}
+
+.btn-green:hover{
+  background-color: #0e6f60;
 }

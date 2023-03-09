@@ -10,146 +10,230 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Reto 1 - Creatividad y confianza: los mejores aliados de una influencer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style2.css" />
+    <title>
+      Reto 1 - Creatividad y confianza: los mejores aliados de una influencer
+    </title>
   </head>
   <body>
     <header>
-      <nav>
-        <div class="container">
-          <span class="brand"> Caroline Sada</span>
-          <ul>
-            <li>
-              <a href="#" class="active">Inicio</a>
-            </li>
-            <li>
-              <a href="#benefits">Beneficios</a>
-            </li>
-            <li>
-              <a href="#price">Inversión</a>
-            </li>
-            <li>
-              <a href="#">Testimonios</a>
-            </li>
-            <li>
-              <a href="#contact">Contacto</a>
-            </li>
-            <li>
-              <a href="../index.html">Índice de retos</a>
-            </li>
-          </ul>
+      <nav class="navbar navbar-expand-lg py-4 sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="brand mx-5" href="#">Caroline Sada</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width: 100%">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#benefits">Beneficios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#price">Inversión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Testimonios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contacto</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  href="../index.html"
+                  style="width: max-content"
+                  class="nav-link"
+                  >Índice de retos</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
     <main>
-      <section class="title">
-        <div>
-          <h1>¡Emprender nunca había sido tan fácil!</h1>
-          <h3>Toma el control de tus finanzas y haz crecer tu negocio</h3>
-          <div style="display: flex">
-            <button type="button" class="regular">Comprar ahora</button>
-            <button type="button" class="outline">Ver más información</button>
+      <div id="title" class="container">
+        <div class="row align-items-center justify-content-around my-5">
+          <div class="col-lg-5">
+            <h1>¡Emprender nunca había sido tan fácil!</h1>
+            <h2>Toma el control de tus finanzas y haz crecer tu negocio</h2>
+            <button type="button" class="btn btn-regular">Comprar ahora</button>
+            <button type="button" class="btn btn-outline-light">
+              Ver más información
+            </button>
+          </div>
+          <div class="col-lg-6 col-xs-12 m-2">
+            <video
+              src="./images/caroline.mp4"
+              preload="auto"
+              style="width: 100%"
+              loop
+              autoplay
+              muted
+              class="object-fit-fill"
+            ></video>
           </div>
         </div>
-        <div>
-          <video src="./images/caroline.mp4" preload="auto" loop autoplay muted width="90%" style="margin-left: 4rem;"></video>
-        </div>
-      </section>
-      <section class="card">
-        <div>
-          <h2>Desbloquea tu potencial financiero</h2>
-          <p>
-            Compra el curso ahora y recibe una checklist de todo lo que
-            necesitas para avanzar en tu emprendimiento
-          </p>
-          <button class="regular green">Lo quiero</button>
-        </div>
-        <div>
-          <img src="./images/bussiness.svg" alt="bussiness" />
-        </div>
-      </section>
-      <div id="benefits">
-        <section class="benefit">
-          <div>
-            <img src="./images/smart-choises.svg" alt="graphic-choises">
-          </div>
-          <div class="information">
-            <p class="muted">Gastos inteligentes</p>
-            <h3>Toma decisiones acertadas</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
-              ipsam nostrum eaque enim laboriosam consectetur. Sapiente asperiores
-              aspernatur praesentium quo, neque repudiandae earum dolores,
-              dignissimos et quia magnam! Cum et quae eligendi maxime. Delectus
-              quod magni blanditiis exercitationem, eos doloremque, unde magnam
-              deleniti expedita debitis fugiat porro in fuga autem?
-            </p>
-          </div>
-        </section>
-        <section class="benefit">
-          <div class="information">
-            <p class="muted">Toma el control</p>
-            <h3>Gestiónalo tú mismo</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
-              ipsam nostrum eaque enim laboriosam consectetur. Sapiente asperiores
-              aspernatur praesentium quo, neque repudiandae earum dolores,
-              dignissimos et quia magnam! Cum et quae eligendi maxime. Delectus
-              quod magni blanditiis exercitationem, eos doloremque, unde magnam
-              deleniti expedita debitis fugiat porro in fuga autem?
-            </p>
-          </div>
-          <div>
-            <img src="./images/diy.svg" alt="graphic-choises">
-          </div>
-        </section>
       </div>
-      <div id="price">
-        <div style="display: flex; align-items: center; flex-direction: column; margin-bottom: 4rem;">
-          <h2>Inversión</h2>
-          <p style="font-weight: 400;">La satisfacción y los resultados están garantizados</p>
+      <div id="main-card" class="container mt-5">
+        <div class="card text-dark py-1">
+          <div class="row g-0 justify-content-around align-items-center">
+            <div class="col-md-6">
+              <div class="card-body">
+                <h3>Desbloquea tu potencial financiero</h3>
+                <p class="card-text">Compra el curso ahora y recibe una checklist de todo lo que
+                  necesitas para avanzar en tu emprendimiento</p>
+                  <button class="btn btn-success">Lo quiero</button>
+              </div>
+            </div>
+            <div class="col-md-6 text-center">
+              <img src="./images/bussiness.svg"  class="img-fluid img-bussiness" alt="bussiness">
+            </div>
+          </div>
         </div>
-        <section class="price">
-          <div style="width: 33%;">
-            <h3>Tener el control de tu emprendimiento no tiene precio</h3>
-            <p style="font-weight: 400; font-size: 1.3rem; width: 85%;">El costo de una mala gestión puede ser mucho más grande</p>
+      </div>
+      <div id="benefits">
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-md-5 text-center">
+              <img src="./images/smart-choises.svg" alt="graphic-choises" />
+            </div>
+            <div class="col-md-5">
+              <p class="muted text-uppercase">Gastos inteligentes</p>
+              <h3>Toma decisiones acertadas</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+                ipsam nostrum eaque enim laboriosam consectetur. Sapiente
+                asperiores aspernatur praesentium quo, neque repudiandae earum
+                dolores, dignissimos et quia magnam! Cum et quae eligendi maxime.
+              </p>
+            </div>
           </div>
-          <div class="card-price">
-            <p class="muted">Curso completo</p>
-            <p style="font-size: 4rem;">$199</p>
-            <p style="font-weight: 400;">Pensado especialmente para emprendedores.</p>
-            <button class="regular green">Lo quiero</button>
+        </div>
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+              <p class="muted text-uppercase">Toma el control</p>
+              <h3>Gestiónalo tú mismo</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta
+                ipsam nostrum eaque enim laboriosam consectetur. Sapiente
+                asperiores aspernatur praesentium quo, neque repudiandae earum
+                dolores, dignissimos et quia magnam! Cum et quae eligendi maxime.
+              </p>
+            </div>
+            <div class="col-md-5 text-center">
+              <img src="./images/diy.svg" alt="graphic-choises" />
+            </div>
           </div>
-          <div class="card-price" >
-            <p style="color:#026764">Obtendrás</p>
-            <ul>
-              <li>Acceso por tiempo ilimitado</li>
-              <li>Recursos descargables</li>
-              <li>¡Garantía de satisfacción!</li>
-            </ul>
-            <button class="outline outline-green">Necesito más información</button>
+        </div>
+      </div>
+      <div id="price" class="container mt-5">
+        <div class="text-center">
+          <h3>Inversión</h3>
+          <p>
+            La satisfacción y los resultados están garantizados
+          </p>
+        </div>
+        <div class="row justify-content-around mt-3 p-3">
+          <div class="col-md-5">
+            <h4 style="overflow-wrap: break-word">Tener el control de tu emprendimiento no tiene precio</h4>
+            <p>
+              El costo de una mala gestión puede ser mucho más grande
+            </p>
           </div>
-        </section>
+          <div class="card card-price justify-content-around align-items-center col-md-3 mb-3 text-black">
+            <div class="row">
+              <div class="col">
+                <p class="text-muted text-uppercase">Curso completo</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title" style="font-size: 3rem; font-weight: 600;">$199</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="card-text">Pensado especialmente para emprendedores.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-success">Lo quiero</button>
+              </div>
+            </div>
+          </div>
+          <div class="card card-price justify-content-around align-items-center col-md-3 mb-3 text-black">
+            <div class="row">
+              <div class="col text-uppercase">
+                <p style="color: #026764; font-weight: 600;">Obtendrás</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <ul>
+                  <li>Acceso por tiempo ilimitado</li>
+                  <li>Recursos descargables</li>
+                  <li>¡Garantía de satisfacción!</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-outline-dark">Necesito más información</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="contact" style="margin-top: 5rem">
-        <section class="card" style="height: 35rem;">
-          <div style=" width:40%;">
-            <h2 style="font-size: 3rem;width:90%;">Comienza a potenciar tus finanzas</h2>
-            <p style="width:90%;"">
+        <section class="card" style="height: 35rem">
+          <div style="width: 40%">
+            <h2 style="font-size: 3rem; width: 90%">
+              Comienza a potenciar tus finanzas
+            </h2>
+            <p style="width: 90%">
               El cambio está en ti y puedes iniciarlo hoy mismo
             </p>
           </div>
           <div>
             <form>
-                <label>Nombre *</label>
-                <input type="text" placeholder="Caroline" required/>
-                <label>Apellido *</label>
-                <input type="text" placeholder="Sada" required/>
-                <label>Email *</label>
-                <input type="email" placeholder="caroline@sada.com" required/>
-                <label>Mensaje</label>
-                <textarea cols="40" rows="5" placeholder="Hablemos..."></textarea>
-                <button type="submit" class="regular green" style="align-self: center;">¡Comencemos!</button>
+              <label>Nombre *</label>
+              <input type="text" placeholder="Caroline" required />
+              <label>Apellido *</label>
+              <input type="text" placeholder="Sada" required />
+              <label>Email *</label>
+              <input type="email" placeholder="caroline@sada.com" required />
+              <label>Mensaje</label>
+              <textarea cols="40" rows="5" placeholder="Hablemos..."></textarea>
+              <button
+                type="submit"
+                class="regular green"
+                style="align-self: center"
+              >
+                ¡Comencemos!
+              </button>
             </form>
           </div>
         </section>
@@ -157,9 +241,9 @@
     </main>
     <footer>
       <div>
-        <p style="font-size: 2rem; width: min-content;">Caroline Sada</p>
-        <p>2023 © Sada </p>
-        <p style="font-size: 0.8rem; font-weight: 400;">All rights reserved</p>
+        <p style="font-size: 2rem; width: min-content">Caroline Sada</p>
+        <p>2023 © Sada</p>
+        <p style="font-size: 0.8rem; font-weight: 400">All rights reserved</p>
       </div>
       <div>
         <ul>
@@ -207,5 +291,10 @@
         </ul>
       </div>
     </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

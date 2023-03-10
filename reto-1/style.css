@@ -12,6 +12,11 @@ body {
   color: white;
 }
 
+main {
+  padding-top: 10rem;
+}
+
+
 /* ----- NAVBAR */
 
 nav {
@@ -65,7 +70,10 @@ h2 {
 
 .card {
   background-color: #e3aeb1;
-  box-shadow: 0px 10px 15px #c4888b;
+}
+
+#main-card .card{
+  box-shadow: 10px 8px 0px #c4888b;
 }
 
 .card h3 {
@@ -107,7 +115,7 @@ h2 {
   font-size: 3rem;
 }
 
-@media (max-width: 410px) {
+@media (max-width: 1400px) {
   #price h4 {
     font-size: 2rem;
   }
@@ -132,17 +140,24 @@ h2 {
   margin-right: 1rem;
 }
 
+/* ----- TESTIMONIES */
+
+.cards-testimonies .card{
+  background-color: white;
+  box-shadow: 5px 6px 0px rgb(196 196 196);
+}
+
 /* ----- FOOTER */
 
-footer{
+footer {
   border-top: solid rgb(170, 169, 169) 3px;
 }
 
-footer ul{
+footer ul {
   list-style-type: none;
 }
 
-footer li{
+footer li {
   margin-bottom: 1rem;
 }
 
@@ -151,16 +166,16 @@ footer li a {
   text-decoration: none;
 }
 
-footer li a:hover{
-  color:grey;
+footer li a:hover {
+  color: grey;
 }
 
-footer li:first-child{
+footer li:first-child {
   font-weight: 600;
   padding-top: 1rem;
 }
 
-.footer-brand{
+.footer-brand {
   width: min-content;
   font-size: 2rem;
   font-weight: 600;

@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainController {
-    private InputController view;
+    private MainView view;
 
-    public MainController(InputController view) {
+    public MainController(MainView view) {
         this.view = view;
     }
 
@@ -27,7 +27,7 @@ public class MainController {
         try {
             JsonObject results = search.getJson();
             JsonArray searchResults = results.getAsJsonArray("organic_results");
-            InputController view = new InputController();
+            MainView view = new MainView();
             view.printResults();
             for (JsonElement result : searchResults) {
                 JsonObject resultObj = result.getAsJsonObject();

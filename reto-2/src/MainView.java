@@ -1,4 +1,4 @@
-public class InputController {
+public class MainView {
 
     public String getAuthorId() {
         String authorId_1 = "ZYBkcvEAAAAJ ";

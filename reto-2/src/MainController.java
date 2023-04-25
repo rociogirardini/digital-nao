@@ -1,8 +1,15 @@
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import serpapi.GoogleSearch;
 import serpapi.SerpApiSearchException;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,39 +20,29 @@ public class MainController {
         this.view = view;
     }
 
-    public void searchAuthor(String apiKey, String authorId) {
-        Map<String, String> parameter = new HashMap<>();
-        parameter.put("engine", "google_scholar_author");
-        parameter.put("q", authorId);
-        parameter.put("author_id", authorId);
-        parameter.put("hl", "es-419");
-        parameter.put("num", "10");
-        parameter.put("api_key", apiKey);
+    public void searchAuthor(String apiKey, String authorId) throws IOException {
+        URL url = new URL("https://serpapi.com/search.json?engine=google_scholar_author&author_id="+authorId+"&hl=es&api_key="+apiKey);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
 
-        GoogleSearch search = new GoogleSearch(parameter);
-
-        try {
-            JsonObject results = search.getJson();
-            JsonArray searchResults = results.getAsJsonArray("organic_results");
-            MainView view = new MainView();
-            view.printResults();
-            for (JsonElement result : searchResults) {
-                JsonObject resultObj = result.getAsJsonObject();
-
-                String title = resultObj.get("title").getAsString();
-                String link = resultObj.get("link").getAsString();
-                String description = resultObj.get("snippet").getAsString();
-
-                System.out.println("Título: " + title);
-                System.out.println("Enlace: " + link);
-                System.out.println("Descripción: " + description);
-                System.out.println();
-                System.out.println("------------------------");
-                System.out.println();
-            }
-
-        } catch (SerpApiSearchException e) {
-            view.printError();
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
         }
+        in.close();
+
+        Gson gson = new Gson();
+        JsonObject json = gson.fromJson(response.toString(), JsonObject.class);
+
+        // Muestra los artículos del autor buscado y el ID del autor
+        ArrayList<Author> authors = new ArrayList<>();
+        JsonArray results = json.getAsJsonArray("articles");
+        System.out.println(results);
+        Author author = Author.fromJson(authorId);
+        authors.add(author);
+        view.printResults(authors);
+
     }
 }

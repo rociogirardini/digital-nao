@@ -28,33 +28,30 @@ La petición que podemos realizar a la Google Scholar Author API es de tipo GET,
 
 La respuesta de la Google Scholar Author API puede encontrarse en dos formatos diferentes: **`json`** o **`html`**. Por defecto vendrá en formato JSON, pero si quisiéramos la respuesta en HTML, basta con agregar un parámetro más, llamado **`output`**. Para obtener el HTML en bruto recuperado, el código es el siguiente **`&output=html`**.
 
- La respuesta, si utilizamos a partir de los **`organic_results`**, se vería de la siguiente manera:
+ La parte de la respuesta que necesitamos es a partir del array de objetos **`articles`**, que se ve de la siguiente manera:
 
 ```json
 {
-      "position": 1,
-      "title": "Carlos Ramirez-Pfeiffer",
-      "link": "https://scholar.google.com/citations?user=ZYBkcvEAAAAJ&hl=en",
-      "displayed_link": "https://scholar.google.com › citations › user=ZYBkcv...",
-      "snippet": "Effective use of recombinant Brucella ovis Omp31 antigen to detect cattle serum antibodies by the ELISA indirect test. MC Navarro-Soto, R Gomez-Flores, A ...",
-      "about_this_result": {
-        "source": {
-          "description": "Google Scholar is a freely accessible web search engine that indexes the full text or metadata of scholarly literature across an array of publishing formats and disciplines.",
-          "source_info_link": "https://scholar.google.com/citations?user=ZYBkcvEAAAAJ&hl=en",
-          "security": "secure",
-          "icon": "https://serpapi.com/searches/643ef1b18e02e47d1ea6d784/images/fc4aed5723645ec1cb561875dc161d65eef525842a3c6ac046fcab587b6f63a0c56ef88f162e755976b783ce18b071d1.png"
-        }
+      "articles": [
+    {
+      "title": "Model-based analysis of ChIP-Seq (MACS)",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=fr&user=LSsXyncAAAAJ&citation_for_view=LSsXyncAAAAJ:2osOgNQ5qMEC",
+      "citation_id": "LSsXyncAAAAJ:2osOgNQ5qMEC",
+      "authors": "Y Zhang, T Liu, CA Meyer, J Eeckhoute, DS Johnson, BE Bernstein, ...",
+      "publication": "Genome biology 9 (9), 1-9, 2008",
+      "cited_by": {
+        "value": 9186,
+        "link": "https://scholar.google.com/scholar?oi=bibs&hl=fr&cites=14252090027271643524",
+        "serpapi_link": "https://serpapi.com/search.json?cites=14252090027271643524&engine=google_scholar&hl=en"
       },
+      "year": "2008"
+    }
+    ...
+  ],
 }
 ```
 
-Para el propósito del dream team, iteraremos sobre el array de objetos **`organic_results`**, utilizando solo los campos **`title`**, **`link`** y **`snippet`** para el output. El formato de la salida, entonces, seguiría el siguiente modelo:
-
-“Autor: ” + **`title`**
-
-”Enlace: “ + **`link`**
-
-”Descripción: “ + **`snippet`**
+Para el propósito del dream team, iteraremos sobre el array de objetos **`articles`**, devolviendo una respuesta en formato JSON.
 
 ### Ejemplo práctico de esta aplicación de consola
 

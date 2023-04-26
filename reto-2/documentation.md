@@ -55,10 +55,10 @@ Para el propósito del dream team, iteraremos sobre el array de objetos **`artic
 
 ### Ejemplo práctico de esta aplicación de consola
 
-Luego de correr nuestra aplicación de consola, se le pedirá al usuario que ingrese el ID del autor que desea buscar, dejando algunos ejemplos a la mano.
-
-![](./src/images/Consulta.png)
-
-Al ingresar un ID y dar Enter, obtendremos la respuesta (hasta 10 resultados):
+Luego de correr nuestra aplicación de consola, se le pedirá al usuario que ingrese el ID del autor que desea buscar, dejando algunos ejemplos a la mano. Al ingresar un ID y dar Enter, obtendremos la respuesta (hasta 10 resultados):
 
 ![](./src/images/Results.png)
+
+Finalmente, estos últimos 10 artículos del autor buscado se guardarán en la base de datos MySQL de la siguiente manera:
+
+![](./src/images/Db.png)

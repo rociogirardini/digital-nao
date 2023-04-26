@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Reto 2 - El dream team de la innovación</title>
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container my-4">
+      <button type="button" class="btn btn-warning">
+        <a href="../index.html" style="width: max-content" class="nav-link">Índice de retos</a>
+      </button>
+
+      <h2 id="documentaci-n-de-la-api-de-google-scholar">
+        Documentación de la API de Google Scholar
+      </h2>
+      <p>
+        La API de Google Scholar permite tener acceso a la base de datos de
+        Google Scholar, una base de datos con trabajos académicos y científicos.
+        Cubre diferentes áreas, como estudios de la salud, sociales, etc., y por
+        ello es muy útil para el propósito del proyecto del dream team. Además,
+        brinda información sobre trabajos académicos, como artículos, tesis y
+        patentes, así como también sobre los autores y las revistas científicas.
+      </p>
+      <p>
+        El dream team utilizará Google Scholar Author como motor de búsqueda, y
+        el request necesario para acceder a esa API es de tipo GET, utilizando
+        como baseURL “<a
+          href="https://serpapi.com/search?engine=google_scholar_author”"
+          >https://serpapi.com/search?engine=google_scholar_author”</a
+        >. Sin embargo, esto no es suficiente, pues el request necesita ciertos
+        parámetros que detallo a continuación:
+      </p>
+      <h3 id="query-params">Query Params</h3>
+      <p>
+        La Google Scholar API admite varios query params, que permiten
+        personalizar la búsqueda. Algunos de los más comunes son los siguientes:
+      </p>
+      <ol>
+        <li><code>api_key</code>: Se necesita tener una clave de la API.</li>
+        <li><code>q</code>: Hace referencia a la cadena de búsqueda.</li>
+        <li><code>author_id</code>: Es el ID del autor a buscar.</li>
+        <li>
+          <code>engine</code>: Como ya dijimos, el URL debe contener
+          &quot;engine=google_scholar_author&quot;.
+        </li>
+      </ol>
+      <p>
+        También utilizaremos otros parámetros, aunque no son estrictamente
+        necesarios:
+      </p>
+      <ol>
+        <li>
+          <code>hl</code>: Para especificar el idioma. En el caso de español
+          latinoamericano, es &quot;es-419&quot;.
+        </li>
+        <li><code>num</code>: Para limitar el número de resultados.</li>
+      </ol>
+      <h3 id="requests">Requests</h3>
+      <p>
+        La petición que podemos realizar a la Google Scholar Author API es de
+        tipo GET, utilizando la baseURL que detallamos anteriormente, sumado a
+        los parámetros que deseamos agregar, finalmente el endpoint sería:
+      </p>
+      <p>
+        <code
+          >https://serpapi.com/search?engine=google_scholar_author&amp;q={authorId}&amp;autho_id={authorId}&amp;hl=es-419&amp;num=10&amp;api_key={apiKey}</code
+        >
+      </p>
+      <h3 id="response">Response</h3>
+      <p>
+        La respuesta de la Google Scholar Author API puede encontrarse en dos
+        formatos diferentes: <strong><code>json</code></strong> o
+        <strong><code>html</code></strong
+        >. Por defecto vendrá en formato JSON, pero si quisiéramos la respuesta
+        en HTML, basta con agregar un parámetro más, llamado
+        <strong><code>output</code></strong
+        >. Para obtener el HTML en bruto recuperado, el código es el siguiente
+        <strong><code>&amp;output=html</code></strong
+        >.
+      </p>
+      <p>
+        La parte de la respuesta que necesitamos es a partir del array de
+        objetos
+        <strong><code>articles</code></strong
+        >, que se ve de la siguiente manera:
+      </p>
+      <pre  style="background-color: rgb(52, 52, 52);"><code class="lang-json">{
+        <span class="hljs-attr">"articles"</span>: [
+      {
+        <span class="hljs-attr">"title"</span>: <span class="hljs-string">"Model-based analysis of ChIP-Seq (MACS)"</span>,
+        <span class="hljs-attr">"link"</span>: <span class="hljs-string">"https://scholar.google.com/citations?view_op=view_citation&amp;hl=fr&amp;user=LSsXyncAAAAJ&amp;citation_for_view=LSsXyncAAAAJ:2osOgNQ5qMEC"</span>,
+        <span class="hljs-attr">"citation_id"</span>: <span class="hljs-string">"LSsXyncAAAAJ:2osOgNQ5qMEC"</span>,
+        <span class="hljs-attr">"authors"</span>: <span class="hljs-string">"Y Zhang, T Liu, CA Meyer, J Eeckhoute, DS Johnson, BE Bernstein, ..."</span>,
+        <span class="hljs-attr">"publication"</span>: <span class="hljs-string">"Genome biology 9 (9), 1-9, 2008"</span>,
+        <span class="hljs-attr">"cited_by"</span>: {
+          <span class="hljs-attr">"value"</span>: <span class="hljs-number">9186</span>,
+          <span class="hljs-attr">"link"</span>: <span class="hljs-string">"https://scholar.google.com/scholar?oi=bibs&amp;hl=fr&amp;cites=14252090027271643524"</span>,
+          <span class="hljs-attr">"serpapi_link"</span>: <span class="hljs-string">"https://serpapi.com/search.json?cites=14252090027271643524&amp;engine=google_scholar&amp;hl=en"</span>
+        },
+        <span class="hljs-attr">"year"</span>: <span class="hljs-string">"2008"</span>
+      }
+      ...
+    ],
+  }
+  </code></pre>
+      <p>
+        Para el propósito del dream team, iteraremos sobre el array de objetos
+        <strong><code>articles</code></strong
+        >, devolviendo una respuesta en formato JSON.
+      </p>
+      <h3 id="ejemplo-pr-ctico-de-esta-aplicaci-n-de-consola">
+        Ejemplo práctico de esta aplicación de consola
+      </h3>
+      <p>
+        Luego de correr nuestra aplicación de consola, se le pedirá al usuario
+        que ingrese el ID del autor que desea buscar, dejando algunos ejemplos a
+        la mano. Al ingresar un ID y dar Enter, obtendremos la respuesta (hasta
+        10 resultados):
+      </p>
+      <p><img src="./src/images/Results.png" alt="results" class="img img-fluid" /></p>
+      <p>
+        Finalmente, estos últimos 10 artículos del autor buscado se guardarán en
+        la base de datos MySQL de la siguiente manera:
+      </p>
+      <p><img src="./src/images/Db.png" alt="database" class="img img-fluid" /></p>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

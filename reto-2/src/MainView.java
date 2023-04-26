@@ -1,3 +1,4 @@
+import java.sql.*;
 import java.util.ArrayList;
 
 public class MainView {
@@ -17,6 +18,16 @@ public class MainView {
         System.out.println("------------------------");
         for (Author author : authors) {
             System.out.println("ID: " + author.getId());
+        }
+    }
+
+    public void printArticles(ResultSet resultSet) throws SQLException {
+        System.out.println("------------------------");
+        System.out.println("Últimos 10 artículos escritos por este autor");
+        System.out.println("------------------------");
+        int count = 1;
+        while(resultSet.next() || count < 10) {
+            System.out.println( count++ + " " + resultSet.getString("articulo"));
         }
     }
 

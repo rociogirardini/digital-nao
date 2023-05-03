@@ -42,11 +42,8 @@ public class apiConnection {
         String authorName = authorObj.get("name").getAsString();
         this.authors = authors;
         this.results = results;
-        String authorName1 = authorName;
         Author author = Author.fromJson(authorId, authorName);
         authors.add(author);
 
-
-        authorName1 = "";
     }
 }

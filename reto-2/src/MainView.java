@@ -11,7 +11,6 @@ public class MainView {
         System.out.println("Aquí hay algunos ejemplos de autores de la Universidad del Norte de México: " + authorId_1 + authorId_2 + authorId_3);
         return Utils.input("ID: ");
     }
-
     public void printResults(ArrayList<Author> authors) {
         System.out.println();
         System.out.println("Autor buscado:");
@@ -25,9 +24,11 @@ public class MainView {
         System.out.println("------------------------");
         System.out.println("Últimos 10 artículos escritos por este autor");
         System.out.println("------------------------");
-        int count = 1;
+        int count = 0;
         while(resultSet.next() || count < 10) {
-            System.out.println( count++ + " " + resultSet.getString("articulo"));
+            count++;
+            System.out.println( count + " " + resultSet.getString("articulo"));
+
         }
     }
 

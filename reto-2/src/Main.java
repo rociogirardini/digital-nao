@@ -1,8 +1,9 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
         String apiKey = "33c966096e140119be67d83b020054f11b1782b540f5d51c7e331efee559fc2a";
 
         MainView view = new MainView();

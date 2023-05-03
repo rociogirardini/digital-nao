@@ -13,9 +13,8 @@ public class MainView {
     }
     public void printResults(ArrayList<Author> authors) {
         System.out.println();
-        System.out.println("Autor buscado:");
-        System.out.println("------------------------");
         for (Author author : authors) {
+            System.out.println("Autor buscado: " + author.getName());
             System.out.println("ID: " + author.getId());
         }
     }
@@ -28,7 +27,6 @@ public class MainView {
         while(resultSet.next() || count < 10) {
             count++;
             System.out.println( count + " " + resultSet.getString("articulo"));
-
         }
     }
 

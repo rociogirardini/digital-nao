@@ -9,15 +9,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class APIconnection {
+public class apiConnection {
 
-    private ArrayList authors;
+    private ArrayList<Author> authors;
     private JsonArray results;
 
-    public ArrayList getAuthors() {
+    public ArrayList<Author> getAuthors() {
         return authors;
     }
-
     public JsonArray getResults() {
         return results;
     }
@@ -39,7 +38,15 @@ public class APIconnection {
         JsonObject json = gson.fromJson(response.toString(), JsonObject.class);
         ArrayList<Author> authors = new ArrayList<>();
         JsonArray results = json.getAsJsonArray("articles");
+        JsonObject authorObj = json.getAsJsonObject("author");
+        String authorName = authorObj.get("name").getAsString();
         this.authors = authors;
         this.results = results;
+        String authorName1 = authorName;
+        Author author = Author.fromJson(authorId, authorName);
+        authors.add(author);
+
+
+        authorName1 = "";
     }
 }

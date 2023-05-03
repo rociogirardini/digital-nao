@@ -1,12 +1,6 @@
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -19,7 +13,7 @@ public class MainController {
 
     public void searchAuthor(String apiKey, String authorId) throws IOException, SQLException {
         // URL Connection
-        APIconnection GSA_API = new APIconnection();
+        apiConnection GSA_API = new apiConnection();
         GSA_API.getAPIconnection(apiKey, authorId);
 
         ArrayList<Author>authors = GSA_API.getAuthors();
@@ -29,8 +23,7 @@ public class MainController {
         DAO db = new DAO();
         db.insertArticle(authorId,results);
 
-        Author author = Author.fromJson(authorId);
-        authors.add(author);
+
         view.printResults(authors);
 
         // Muestra los resultados de la DB por consola

@@ -2,17 +2,20 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+        dir 'reto-3'
       steps {
         sh 'npm install'
         sh 'npm run build'
       }
     }
     stage('Test') {
+        dir 'reto-3'
       steps {
         sh 'npm test'
       }
     }
     stage('Deploy') {
+        dir 'reto-3'
       steps {
         sh './deploy.sh'
       }

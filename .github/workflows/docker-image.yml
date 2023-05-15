@@ -2,7 +2,7 @@ name: Deploy Docker Image
 on:
   push:
     branches:
-      - main  # Cambia "main" al nombre de tu rama principal si es diferente
+      - main
 
 jobs:
   deploy:

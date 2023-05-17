@@ -26,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: rociogiradini/digitalnao-radionet:latest
+          tags: rociogirardini/digitalnao-radionet:latest

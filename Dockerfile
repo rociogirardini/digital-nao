@@ -6,7 +6,7 @@ WORKDIR /reto-3/site
 
 # Se copian los archivos necesarios al contenedor
 COPY package.json .
-COPY src/ ./src
+COPY ../site/src/ ./src
 
 # Se instalan las dependencias
 RUN npm install --production

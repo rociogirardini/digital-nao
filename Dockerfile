@@ -5,7 +5,7 @@ FROM node:latest
 WORKDIR /reto-3/site
 
 # Se copian los archivos necesarios al contenedor
-COPY package.json .
+COPY reto-3/site/package.json .
 COPY reto-3/site/src/ ./src
 
 # Se instalan las dependencias

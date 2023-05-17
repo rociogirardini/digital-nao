@@ -2,10 +2,11 @@
 FROM node:latest
 
 # Se establece el directorio de trabajo
-WORKDIR /reto-3/radionet
+WORKDIR /reto-3/site
 
 # Se copian los archivos necesarios al contenedor
-COPY /reto-3/radionet/site/package.json .
+COPY package.json .
+COPY src/ ./src
 
 # Se instalan las dependencias
 RUN npm install --production

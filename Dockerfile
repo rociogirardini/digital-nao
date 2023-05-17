@@ -2,18 +2,16 @@
 FROM node:latest
 
 # Se establece el directorio de trabajo
-WORKDIR /app
+WORKDIR /reto-3/radionet
 
 # Se copian los archivos necesarios al contenedor
 COPY package.json .
-COPY package-lock.json .
-COPY src/ ./src
 
 # Se instalan las dependencias
 RUN npm install --production
 
 # Se expone el puerto que utiliza la aplicación
-EXPOSE 3000
+EXPOSE 8080
 
 # Se ejecuta el comando para iniciar la aplicación
 CMD ["npm", "start"]

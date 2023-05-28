@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# 1. Construir y etiquetar las imágenes de Docker para cada Lambda
-docker build -t lambda1-image ./lambda1
-docker build -t lambda2-image ./lambda2
-
 # 2. Autenticación en AWS ECR
 aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin digitalnao
 

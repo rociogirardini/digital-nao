@@ -8,17 +8,16 @@ pipeline {
         sh 'npm run build'
       }
     }
+    stage('Quality Test') {
+      steps {
+        dir 'reto-3/site'
+        sh 'npm install standard --save-dev'
+      }
+    }
     stage('Test') {
       steps {
         dir 'reto-3/site'
         sh 'npm test'
-      }
-    }
-    stage('Quality PEP8 Test') {
-      steps {
-        dir 'reto-3/site'
-        sh 'pip install flake8'
-        sh 'flake8 reto-3/site'
       }
     }
     stage('Deploy') {

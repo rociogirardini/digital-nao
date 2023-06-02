@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Juego Breakout</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container pt-5">
+        <div class="row justify-content-between align-items-center">
+          <div class="col col-auto"><h1>Juego Breakout</h1></div>
+          <div class="col col-auto"><a class="btn btn-warning" href="../index.html">Volver a los miniproyectos</a></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col col-auto">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+          </div>
+          <div class="col col-auto">
+            Seleccioná el nivel de dificultad
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="speedLevel1" value="2" checked>
+              <label class="form-check-label" for="speedLevel1">
+                Fácil
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="speedLevel2" value="4">
+              <label class="form-check-label" for="speedLevel2">
+                Medio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="speedLevel3" value="8">
+              <label class="form-check-label" for="speedLevel3">
+                Difícil
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

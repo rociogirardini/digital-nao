@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Calculadora de ingresos</title>
+  </head>
+  <body>
+    <main>
+      <div class="container pt-5">
+        <div class="row justify-content-between align-items-center">
+          <div class="col col-auto"><h1>Calculadora de Ingresos</h1></div>
+          <div class="col col-auto">
+            <a class="btn btn-warning" href="../index.html"
+              >Volver a los miniproyectos</a
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <form id="income-form">
+              <div id="income-container">
+                <div class="income-entry">
+                  <label for="hourly-wage" class="form-label"
+                    >Salario por hora:</label
+                  >
+                  <input
+                    type="number"
+                    id="hourly-wage"
+                    class="form-control"
+                    placeholder="Ingrese el salario por hora"
+                    required
+                  />
+
+                  <label for="weekly-hours" class="form-label"
+                    >Horas trabajadas por semana:</label
+                  >
+                  <input
+                    type="number"
+                    id="weekly-hours"
+                    class="form-control"
+                    placeholder="Ingrese las horas trabajadas por semana"
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <p>¿Hay más personas en tu grupo familiar?</p>
+                <button
+                  class="btn btn-warning mr-3"
+                  type="button"
+                  onclick="addIncome()"
+                >
+                  +</button
+                ><span> Agregar otro ingreso</span>
+              </div>
+
+              <button
+                class="btn btn-success mt-2"
+                type="submit"
+                onclick="calculateIncome(event)"
+              >
+                Calcular
+              </button>
+              <button
+                class="btn btn-danger mt-2"
+                type="button"
+                onclick="cleanForm()"
+              >
+                Limpiar
+              </button>
+            </form>
+          </div>
+          <div class="col">
+            <h2 id="results"></h2>
+            <p id="monthly-income"></p>
+            <p id="annual-income"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

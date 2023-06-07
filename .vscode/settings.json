@@ -4,5 +4,9 @@
         "reto-2/src/libs/google-search-results-java-2.0.3.jar",
         "c:\\Users\\corpo\\Downloads\\gson-2.8.9.jar"
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
 }

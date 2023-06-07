@@ -3,5 +3,6 @@
         "lib/**/*.jar",
         "reto-2/src/libs/google-search-results-java-2.0.3.jar",
         "c:\\Users\\corpo\\Downloads\\gson-2.8.9.jar"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

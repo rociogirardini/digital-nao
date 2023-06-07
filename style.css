@@ -30,8 +30,20 @@ td a{
 
 .btn-green{
   background-color: #0fa08a;
+  color: white;
 }
 
 .btn-green:hover{
   background-color: #0e6f60;
+  color: white;
+}
+
+.btn-green-2{
+  background-color: #0f80a0;
+  color: white;
+}
+
+.btn-green-2:hover{
+  background-color: #0e576f;
+  color: white;
 }

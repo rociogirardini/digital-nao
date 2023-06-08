@@ -9,8 +9,6 @@ def index():
 @app.route('/draw', methods=['POST'])
 def draw():
     data = request.get_json()
-    # Aquí puedes procesar los datos del dibujo recibidos en 'data'
-    # y realizar cualquier lógica adicional que desees
     print(data)
     return 'Dibujo recibido correctamente'
 

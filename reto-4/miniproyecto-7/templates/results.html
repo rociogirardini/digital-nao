@@ -34,11 +34,11 @@
           <div class="col">
             <h1>Resultados</h1>
             <ul>
-              {% for titulo, enlaces in resultados.items() %}
-              <li>{{ titulo }}</li>
+              {% for title, links in results.items() %}
+              <li>{{ title }}</li>
               <ul>
-                {% for enlace in enlaces %}
-                <li>{{ enlace }}</li>
+                {% for link in links %}
+                <li>{{ link }}</li>
                 {% endfor %}
               </ul>
               {% endfor %}

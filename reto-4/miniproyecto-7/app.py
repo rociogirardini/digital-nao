@@ -14,15 +14,15 @@ def scrape():
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    titulo = soup.title.text
-    print('Título:', titulo)
+    title = soup.title.text
+    print('Título:', title)
 
-    enlaces = [enlace.get('href') for enlace in soup.find_all('a')]
-    print('Enlaces:', enlaces)
+    links = [enlace.get('href') for enlace in soup.find_all('a')]
+    print('Enlaces:', links)
 
-    resultados = {titulo: enlaces}
+    results = {title: links}
 
-    return render_template('results.html', resultados=resultados)
+    return render_template('results.html', results=results)
 
 if __name__ == '__main__':
     app.run()

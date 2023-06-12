@@ -1,66 +1,77 @@
-// Variable global para poder eliminar las entrys agregadas
-let newEntrys = 0;
+class IncomeCalculator {
+  constructor() {
+    this.newEntrys = 0;
+    this.incomeForm = document.getElementById("income-form");
+    this.incomeForm.addEventListener("submit", this.calculateIncome.bind(this));
+  }
 
-function calculateIncome(event) {
-  event.preventDefault();
+  formatCurrency(amount) {
+    return amount.toLocaleString(undefined, {
+      style: "currency",
+      currency: "ARS"
+    });
+  }
 
-  const incomeEntries = document.querySelectorAll(".income-entry");
-  let totalMonthlyIncome = 0;
+  calculateIncome(event) {
+    event.preventDefault();
 
-  incomeEntries.forEach((entry) => {
-    const hourlyWageInput = entry.querySelector("input:nth-of-type(1)");
-    const weeklyHoursInput = entry.querySelector("input:nth-of-type(2)");
+    const incomeEntries = document.querySelectorAll(".income-entry");
+    let totalMonthlyIncome = 0;
 
-    const hourlyWage = parseFloat(hourlyWageInput.value);
-    const weeklyHours = parseFloat(weeklyHoursInput.value);
+    incomeEntries.forEach((entry) => {
+      const hourlyWageInput = entry.querySelector("input:nth-of-type(1)");
+      const weeklyHoursInput = entry.querySelector("input:nth-of-type(2)");
 
-    if (!isNaN(hourlyWage) && !isNaN(weeklyHours)) {
-      const monthlyIncome = hourlyWage * weeklyHours * 4; // Suponiendo 4 semanas al mes
-      totalMonthlyIncome += monthlyIncome;
-    }
-  });
+      const hourlyWage = parseFloat(hourlyWageInput.value);
+      const weeklyHours = parseFloat(weeklyHoursInput.value);
 
-  document.getElementById("results").textContent = "Resultados:";
-  document.getElementById(
-    "monthly-income"
-  ).textContent = `Ingreso mensual: $${totalMonthlyIncome.toFixed(2)}`;
-  document.getElementById("annual-income").textContent = `Ingreso anual: $${(
-    totalMonthlyIncome * 12
-  ).toFixed(2)}`;
-}
+      if (!isNaN(hourlyWage) && !isNaN(weeklyHours)) {
+        const monthlyIncome = hourlyWage * weeklyHours * 4; // Suponiendo 4 semanas al mes
+        totalMonthlyIncome += monthlyIncome;
+      }
+    });
 
-function addIncome() {
-  // Agregar otro ingreso
-  newEntrys++;
-  const incomeContainer = document.getElementById("income-container");
-  const newIncomeEntry = document.createElement("div");
-  newIncomeEntry.className = "income-entry new-income";
-  newIncomeEntry.innerHTML = `
+    document.getElementById("results").textContent = "Resultados:";
+    document.getElementById(
+      "monthly-income"
+    ).textContent = `Ingreso mensual: $${this.formatCurrency(totalMonthlyIncome)}`;
+    document.getElementById("annual-income").textContent = `Ingreso anual: $${this.formatCurrency(totalMonthlyIncome * 12)}`;
+  }
+
+  addIncome() {
+    // Agregar otro ingreso
+    this.newEntrys++;
+    const incomeContainer = document.getElementById("income-container");
+    const newIncomeEntry = document.createElement("div");
+    newIncomeEntry.className = "income-entry new-income";
+    newIncomeEntry.innerHTML = `
       <hr/>
       <label for="hourly-wage" class="form-label">Salario por hora:</label>
       <input type="number" class="form-control" placeholder="Ingrese el salario por hora" required/>
-      
+
       <label for="weekly-hours" class="form-label">Horas trabajadas por semana:</label>
       <input type="number" class="form-control" placeholder="Ingrese las horas trabajadas por semana" required />
     `;
-  incomeContainer.appendChild(newIncomeEntry);
-}
+    incomeContainer.appendChild(newIncomeEntry);
+  }
 
-function cleanForm() {
-  // Limpiar los inputs
-  document.getElementById("income-form").reset();
+  cleanForm() {
+    // Limpiar los inputs
+    document.getElementById("income-form").reset();
 
-  // Limpiar resultados
-  document.getElementById("results").textContent = "";
-  document.getElementById("monthly-income").textContent = "";
-  document.getElementById("annual-income").textContent = "";
+    // Limpiar resultados
+    document.getElementById("results").textContent = "";
+    document.getElementById("monthly-income").textContent = "";
+    document.getElementById("annual-income").textContent = "";
 
-  // Eliminar entrys agregadas
-  const parentNode = document.getElementById("income-container");
-  const childNode = document.getElementsByClassName("new-income");
-  for (let i = 0; i <= newEntrys; i++) {
-    newEntrys--;
-    parentNode.removeChild(childNode[newEntrys]);
-    
+    // Eliminar entrys agregadas
+    const parentNode = document.getElementById("income-container");
+    const childNode = document.getElementsByClassName("new-income");
+    for (let i = 0; i <= this.newEntrys; i++) {
+      this.newEntrys--;
+      parentNode.removeChild(childNode[this.newEntrys]);
+    }
   }
 }
+
+const incomeCalculator = new IncomeCalculator();

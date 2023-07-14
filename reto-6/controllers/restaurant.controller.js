@@ -62,11 +62,11 @@ const addComment = async (req, res) => {
 
 const addScore = async(req, res) => {
     const { id } = req.params;
-    const { score } = req.body;
+    const { date, grade, score } = req.body;
     try {
         const restaurant = await Restaurant.findOneAndUpdate(
             {restaurant_id: id},
-            { $push: { "restaurant.grades": score } },
+            { $push: { grades: {date, grade, score} } },
             { new: true }
             );
   
@@ -81,6 +81,9 @@ const addScore = async(req, res) => {
       });
     } catch (error) {
       console.log(error);
+      res.status(500).json({
+        msg: 'Error al enviar la puntuación.'
+      })
       throw new Error("Error al enviar la puntuación.");
     }
 

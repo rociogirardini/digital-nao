@@ -5,3 +5,5 @@ node_modules
 *.env
 
 *.pem
+
+/reto-6/db/restaurants.json

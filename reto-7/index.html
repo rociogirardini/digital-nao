@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>En un abrir y cerrar de un libro</title>
+</head>
+
+<body class="container mt-3">
+    <h1>TypeScript</h1>
+    <p>Typescript es un lenguaje de programación que extiende JavaScript agregando tipos estáticos opcionales. Esto
+        significa que podemos definir tipos para las variables, funciones y objetos, lo que proporciona una mayor
+        robustez y seguridad en nuestro código.</p>
+    <div>
+        <h2>Tipos de datos</h2>
+        <ul>
+            <li><strong>Any: </strong>Es un tipo que puede representar cualquier valor de JavaScript sin
+                restricciones.</br><code>let dynamicValue: any = "Hello";</br>
+                dynamicValue = 42; // No hay error en tiempo de compilación</code></li>
+            <h3>Datos primitivos</h3>
+            <ul>
+                <li><strong>String: </strong>Representa una cadena de texto y se declara usando comillas simples o
+                    dobles.</br><code>let firstName: string = "John"</code></li>
+                <li><strong>Number: </strong>Representa un número y puede ser de tipo entero o decimal.</br><code>let age: number = 30;</br>
+                        let pi: number = 3.14;</code></li>
+                <li><strong>Boolean: </strong>Representa un valor verdadero o falso (true o
+                    false).</br><code>let isStudent: boolean = true;</code></li>
+                <li><strong>Void: </strong>Indica que una función no devuelve ningún valor.</br><code>function logMessage(message: string): void {
+                            console.log(message);
+                          }</code></li>
+                <li><strong>Null y Undefined: </strong>Representan valores nulos y no definidos
+                    respectivamente.</br><code>let nullValue: null = null;</br>
+                            let undefinedValue: undefined = undefined;</code></li>
+            </ul>
+            <h3>Enumeraciones</h3>
+            <ul>
+                <li><strong>Enum: </strong>Ofrecen una manera sencilla de trabajar con conjuntos de constantes
+                    relacionadas. Usos:
+                    <ul>
+                        <li>Permite reducir los errores que provoca la transposición o la escritura incorrecta de
+                            números.</li>
+                        <li>Facilita el cambio de valores en el futuro.</li>
+                        <li>Facilita la lectura del código, lo que significa que es menos probable que se produzcan
+                            errores en él.</li>
+                        <li>Garantiza la compatibilidad con versiones posteriores. Con las enumeraciones, es menos
+                            probable que se produzca un error en el código si en el futuro alguien cambia los valores
+                            correspondientes a los nombres de miembro.</li>
+                    </ul>
+                    <code>enum Color {
+                    Red,
+                    Green,
+                    Blue,
+                  }
+                </br>
+                  let selectedColor: Color = Color.Green;</code>
+                </li>
+            </ul>
+            <h3>Unknown y su diferencia con Any</h3>
+            <ul>
+                <li><strong>Unknown: </strong>Similar a any, es similar al tipo any en que cualquier valor se puede asignar al tipo unknown. Sin embargo, no se puede acceder a las propiedades de un tipo unknown; tampoco se pueden llamar ni construir.</br><code>let uncertainValue: unknown = "Hello";</br>
+                    if (typeof uncertainValue === "string") {
+                        let length: number = uncertainValue.length; // Comprobación de tipo requerida
+                      }</code></li>
+                <p>La diferencia principal entre any y unknown es que no puede interactuar con una variable de tipo unknown; si lo hace, se genera un error del compilador. any omite las comprobaciones en tiempo de compilación y el objeto se evalúa en tiempo de ejecución. Si el método o la propiedad existen, se comportará según lo esperado.</p>
+            </ul>
+            <h3>Unión e Intersección</h3>
+            <ul>
+                <li><strong>Unión (|): </strong>Permite declarar una variable con múltiples tipos posibles.</br><code>let value: string | number = "hello";</br>
+                    value = 42;</code></li>
+                <li><strong>Intersección (&): </strong>Permite combinar varios tipos en uno.</br><code>type Person = {
+                    name: string;
+                  };</br>
+                  
+                  type Employee = {
+                    empId: number;
+                  };</br>
+                  type EmployeePerson = Person & Employee;</code></li>
+            </ul>
+            <h3>Tipos de Colección</h3>
+            <ul>
+                <li><strong>Array: </strong>Representa una colección ordenada de elementos del mismo
+                    tipo.</br><code>let numbers: number[] = [1, 2, 3, 4, 5];</br>let fruits: string[] = ["apple", "banana", "orange"];</code>
+                </li>
+                <li><strong>Tuple: </strong>Representa un array con un número fijo de elementos, cada uno con un tipo
+                    específico.</br><code>let coordinates: [number, number] = [10, 20];</code></li>
+            </ul>
+            <h3>Buenas prácticas</h3>
+            <ul>
+                <li>Utilizar tipos explícitos para variables y funciones para mejorar la legibilidad y mantenibilidad del código.</li>
+                <li>Evitar el uso excesivo de <code>any</code>, preferir usar tipos más específicos siempre que sea posible.</li>
+                <li>Utilizar uniones y tipos discriminantes para representar variantes de datos.</li>
+                <li>Emplear enumeraciones en lugar de valores literales para evitar errores tipográficos.</li>
+                <li>Utilizar tipos genéricos para escribir funciones y clases reutilizables.</li>
+                </ul>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
